@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Navigate to project folder (update path if needed)
+cd /c/Users/vin/Downloads/5-number-generator
+
+# Initialize git repository
+git init
+
+# Stage all files
+git add .
+
+# Commit changes
+git commit -m "Initial commit - working 5-number generator app"
+
+# Add GitHub remote
+git remote add origin https://github.com/khustle9290/5-number-generator.git
+
+# Rename branch to main
+git branch -M main
+
+# Push to GitHub
+git push -u origin main
+
+echo "✅ 5-number-generator pushed to GitHub at https://github.com/khustle9290/5-number-generator"
