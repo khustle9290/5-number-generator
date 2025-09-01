@@ -1,2 +1,18 @@
-# 5-number-generator
-5-Number Generator is a Streamlit app that lets users input a pool of numbers and generates all possible unique 5-number combinations. The app displays the total combinations and each set in a readable format, providing a foundation for lottery analysis or wheeling systems.
+# 5-Number Generator
+
+A Streamlit app to generate 5-number lottery datasets from a user-provided pool of 5–8 numbers, with customizable constraints.
+
+## Features
+- Accepts 5–8 numbers from the user.
+- Generate all 5-number combinations with constraints:
+  - Odd/Even ratio (5/0, 4/1, 3/2, 2/3, 1/4, 0/5)
+  - Sum range (minimum and maximum sum)
+  - Maximum triangular numbers per row (0, 1, 2)
+- Limit the number of generated datasets.
+- Display results in a table with columns `Num1`–`Num5` and `Sum`.
+- Download generated datasets as a CSV file.
+
+## How to Run
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
