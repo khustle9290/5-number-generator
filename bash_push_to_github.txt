@@ -1,24 +1,20 @@
 #!/bin/bash
 
-# Navigate to project folder (update path if needed)
-cd /c/Users/vin/Downloads/5-number-generator
+# Navigate to your project folder
+cd /c/Users/vin/Downloads/5-number-generator || exit
 
-# Initialize git repository
-git init
+# Pull latest changes from GitHub (rebase to avoid merge commits)
+git pull origin main --rebase
 
-# Stage all files
+# Stage all files (ensures app.py and others are included)
 git add .
 
-# Commit changes
-git commit -m "Initial commit - working 5-number generator app"
-
-# Add GitHub remote
-git remote add origin https://github.com/khustle9290/5-number-generator.git
-
-# Rename branch to main
-git branch -M main
+# Commit the changes (skip if nothing to commit)
+git commit -m "Update project files" || echo "No changes to commit"
 
 # Push to GitHub
-git push -u origin main
+git push origin main
 
-echo "✅ 5-number-generator pushed to GitHub at https://github.com/khustle9290/5-number-generator"
+# Open the repo in your default browser (Windows Git Bash)
+repo_url="https://github.com/khustle9290/5-number-generator"
+cmd.exe /c start "$repo_url"
