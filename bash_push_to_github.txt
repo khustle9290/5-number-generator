@@ -1,20 +1,20 @@
 #!/bin/bash
+# Push local changes to GitHub and open repo in browser
 
-# Navigate to your project folder
-cd /c/Users/vin/Downloads/5-number-generator || exit
+# 1. Make sure we're in the right folder
+cd "$(dirname "$0")"
 
-# Pull latest changes from GitHub (rebase to avoid merge commits)
-git pull origin main --rebase
+# 2. Pull latest changes
+git pull origin main
 
-# Stage all files (ensures app.py and others are included)
+# 3. Stage all changes
 git add .
 
-# Commit the changes (skip if nothing to commit)
-git commit -m "Update project files" || echo "No changes to commit"
+# 4. Commit changes (message auto-generated with timestamp)
+git commit -m "Update project files on $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
 
-# Push to GitHub
+# 5. Push to GitHub
 git push origin main
 
-# Open the repo in your default browser (Windows Git Bash)
-repo_url="https://github.com/khustle9290/5-number-generator"
-cmd.exe /c start "$repo_url"
+# 6. Open GitHub repo in default browser (Windows-compatible)
+start "" "https://github.com/khustle9290/5-number-generator"
